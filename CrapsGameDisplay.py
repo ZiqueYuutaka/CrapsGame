@@ -21,6 +21,8 @@ def reset():
 	score = 0
 
 def printStats(winnings, score):
+	print('\nWinnings	=%d'% winnings)
+	print('\nScore		=%d'% score)
 
 
 while key != '5':
@@ -42,15 +44,21 @@ while key != '5':
 		totalFunds = totalFunds - 100
 #		print('Funds:\t$ %.2f' % (totalFunds))
 		printFunds(totalFunds)
+		winnings += 1
+		score += 1
+		printStats(winnings, score)
 
 
 	elif key == '2':
 		print('Display Available Funds\n')
 #		print('Funds:\t$ %.2f' % (totalFunds))
 		printFunds(totalFunds)
+		printStats(winnings, score)
 	elif key == '3':
 		print('Reset Winnings to Zero')
-
+		totalFunds = 1000
+		winnings = 0
+		score = 0
 	elif key == '4':
 		print('Save Name and Score')
 	elif key == '5':
