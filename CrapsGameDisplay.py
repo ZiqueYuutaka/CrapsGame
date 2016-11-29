@@ -117,6 +117,12 @@ while key != '5':
 		score = 0
 	elif key == '4':
 		print('Save Name and Score')
+		outfile = open(r'PlayersAndScores.txt','w')
+		try:
+			outfile.write(S2)
+
+		finally:
+			outfile.close()
 	elif key == '5':
 		print('Quitting game')
 	else:
