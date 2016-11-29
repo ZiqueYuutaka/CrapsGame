@@ -31,7 +31,20 @@ def errorMsg():
 #def playToPoint(point, ):
 	
 
+#Read in data before game starts
+infile = open(r'PlayersAndScores.txt', 'r')
+try:
+	S = infile.readline()
+	print('The file PlayersAndScores.txt contains the following:')
+	print(S)
+	print('Split string S')
+	L = S.split('|')
+	print('L contains: ')
+	for i in L:
+		print(i)
 
+finally:
+	infile.close()
 
 while key != '5':
 	print('\n\nCRAPS\n\n\n' +
@@ -117,9 +130,13 @@ while key != '5':
 		score = 0
 	elif key == '4':
 		print('Save Name and Score')
-		outfile = open(r'PlayersAndScores.txt','w')
+		outfile = open(r'PlayersAndScores2.txt', 'w')
 		try:
-			outfile.write(S2)
+			print('Saving L to file PlayersAndScores2.txt')
+			for i in L:
+				outfile.write(i + '|')
+
+			print('Data saved')
 
 		finally:
 			outfile.close()
