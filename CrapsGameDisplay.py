@@ -32,16 +32,18 @@ def errorMsg():
 	
 
 #Read in data before game starts
+players = {}
 infile = open(r'PlayersAndScores.txt', 'r')
 try:
 	S = infile.readline()
+	L=[]
 	print('The file PlayersAndScores.txt contains the following:')
 	print(S)
 	print('Split string S')
 	L = S.split('|')
-	print('L contains: ')
+	L.pop() #pop blank space
 	for i in L:
-		print(i)
+		players[L.pop()] = (L.pop(),L.pop(),L.pop())
 
 finally:
 	infile.close()
@@ -130,9 +132,9 @@ while key != '5':
 		score = 0
 	elif key == '4':
 		print('Save Name and Score')
-		outfile = open(r'PlayersAndScores2.txt', 'w')
+		outfile = open(r'PlayersAndScores.txt', 'w')
 		try:
-			print('Saving L to file PlayersAndScores2.txt')
+			print('Saving L to file PlayersAndScores.txt')
 			for i in L:
 				outfile.write(i + '|')
 
