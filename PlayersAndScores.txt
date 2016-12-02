@@ -1,2 +1,4 @@
-Carol|0|0|900
-Steve|1|0|900
+Carol|0|0|1000
+Kevin|1|1|1000
+Steve|2|2|1000
+Stephen|2|1|900
